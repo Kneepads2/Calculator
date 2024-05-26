@@ -49,9 +49,9 @@
     </footer>
 
     <script>
-        let calculation = "";
-        let display = "";
-
+        let calculation = ""; /*this one will be used for the actual calculations*/
+        let display = ""; /*this one will be used to display input in the container*/
+        /*difference between the two is that display uses user-friendly characters while calculation uses the actual math logic*/
         function appendToDisplay(display_calculation, display_value) {
             display += display_value;
             calculation += display_calculation;
@@ -60,18 +60,18 @@
 
         function computeResult() {
             try {
-                // Evaluate the display string as a mathematical expression
+                // Evaluate the calculation string as a mathematical expression
                 calculation = eval(calculation);
                 document.getElementById("input").innerText = calculation;
             } catch (e) {
-                document.getElementById("input").innerText = "Error";
+                document.getElementById("input").innerText = "Error"; //if the user divides by 0, computes an incomplete equation (like 3+1+ ....), etc
                 display = "";
                 calculation = "";
             }
         }
 
-        function clearButton(){
-            display = "";
+        function clearButton(){ //resets all strings to empty
+            display = ""; 
             calculation = "";
             document.getElementById("input").innerText = "";
         }
