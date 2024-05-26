@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+    
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-end; /*change this to flex-end if you'd like the input to start on the right side */
+    background-color: #f5f3f3;
+    border: 1px solid #ccc;
+    margin: 30px;
+    width: 99%;
+    height: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vh;
+    font-weight: bolder;
+}
+
+button {
+    width: calc((99%/7));
+    height: 15vh;
+    font-weight: bold;
+    font-size: larger; 
+    align-items: flex-start;
+    margin: 1px;
+    border: 1px solid #bbbbbb
+}
+
+.equalButton {
+    background-color: rgb(112, 166, 202);
+}
+
+.clearButton {
+    background-color: rgb(202, 112, 112);
+    margin-left: auto;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+  }
+

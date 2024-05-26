@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="external.css">
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div class="container">
+            <p id="input"></p>
+        </div>
+        <div class="button-row">
+            <button id="1" onclick="appendToDisplay('1','1')">1</button>
+            <button id="2" onclick="appendToDisplay('2','2')">2</button>
+            <button id="3" onclick="appendToDisplay('3','3')">3</button>
+            <button id="+" onclick="appendToDisplay('+','+')">+</button>
+            <button id="-" onclick="appendToDisplay('-','-')">-</button>
+            <button id="(" onclick="appendToDisplay('(','(')">(</button>
+            <button id=")" onclick="appendToDisplay(')',')')">)</button>
+        </div>
+        <div class="button-row">
+            <button id="4" onclick="appendToDisplay('4','4')">4</button>
+            <button id="5" onclick="appendToDisplay('5','5')">5</button>
+            <button id="6" onclick="appendToDisplay('6','6')">6</button>
+            <button id="x" onclick="appendToDisplay('*','x')">x</button>
+            <button id="÷" onclick="appendToDisplay('/','÷')">÷</button>
+            <button id="exponent" onclick="appendToDisplay('**','^')">n^x</button>
+            <button id="sqrt" onclick="appendToDisplay('Math.sqrt(','√(')">sqrt(x)</button> 
+        <!--   <button id="e" onclick="appendToDisplay('2.71828182846')">e</button> -->
+        </div>
+        <div class="button-row">
+            <button id="7" onclick="appendToDisplay('7','7')">7</button>
+            <button id="8" onclick="appendToDisplay('8','8')">8</button>
+            <button id="9" onclick="appendToDisplay('9','9')">9</button>
+            <button id="9" onclick="appendToDisplay('0','0')">0</button>
+            <button id="dot" onclick="appendToDisplay('.','.')">.</button>
+            <button id="pi" onclick="appendToDisplay('3.14159265359','π')">π</button>
+            <button class="equalButton"id="compute" onclick="computeResult()">=</button>
+        </div>
+        <div class="button-row">
+            <button class="clearButton" id="clear" onclick="clearButton()">Clear</button>
+        </div>
+    </div>
+    <footer>
+        <p>Created by Kneepads2</p>
+    </footer>
+
+    <script>
+        let calculation = "";
+        let display = "";
+
+        function appendToDisplay(display_calculation, display_value) {
+            display += display_value;
+            calculation += display_calculation;
+            document.getElementById("input").innerText = display;
+        }
+
+        function computeResult() {
+            try {
+                // Evaluate the display string as a mathematical expression
+                calculation = eval(calculation);
+                document.getElementById("input").innerText = calculation;
+            } catch (e) {
+                document.getElementById("input").innerText = "Error";
+                display = "";
+                calculation = "";
+            }
+        }
+
+        function clearButton(){
+            display = "";
+            calculation = "";
+            document.getElementById("input").innerText = "";
+        }
+    </script>
+</body>
+</html>
